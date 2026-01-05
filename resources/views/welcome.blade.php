@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
-    <h1 class="text-4xl font-bold mb-6 text-gray-800">Welcome to Calculadora App</h1>
+    <h1 class="text-4xl font-bold mb-6 text-gray-800">Welcome to Calculator App</h1>
     <p class="text-lg text-gray-600 mb-8 max-w-2xl">
         A simple and efficient calculator application built with Laravel. Manage your calculations and track your history easily.
     </p>

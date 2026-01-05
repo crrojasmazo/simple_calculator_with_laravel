@@ -1,109 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <style>
-        body {
-            background-color: #333;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-        }
+@section('title', 'Register')
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            background-color: #444;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-        }
+@section('content')
+<div class="flex items-center justify-center min-h-[50vh]">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md border border-gray-200">
+        <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Register</h2>
+        
+        <form method="POST" action="{{ route('register') }}" class="space-y-4">
+            @csrf
+            
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input type="text" name="name" id="name" required value="{{ old('name') }}" autofocus
+                    class="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 @error('name') border-red-500 @enderror">
+                @error('name')
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                @enderror
+            </div>
 
-        input,
-        button {
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            width: 100%;
-            box-sizing: border-box;
-        }
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" name="email" id="email" required value="{{ old('email') }}"
+                    class="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 @error('email') border-red-500 @enderror">
+                @error('email')
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                @enderror
+            </div>
 
-        button {
-            background-color: #555;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input type="password" name="password" id="password" required
+                    class="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 @error('password') border-red-500 @enderror">
+                @error('password')
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                @enderror
+            </div>
 
-        button:hover {
-            background-color: #666;
-        }
-
-        .error-message {
-            color: #d9534f;
-            background-color: #f2dede;
-            border-color: #ebccd1;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            width: 300px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        a {
-            color: #88ccff;
-            text-decoration: none;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Registro</h1>
-
-    @if ($errors->any())
-        <div class="error-message">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <form action="/register" method="post">
-        @csrf
-        <div>
-            <label for="name" style="display: block; margin-bottom: 5px; text-align: left;">Nombre:</label>
-            <input type="text" name="name" id="name" required value="{{ old('name') }}">
-        </div>
-        <div>
-            <label for="email" style="display: block; margin-bottom: 5px; text-align: left;">Email:</label>
-            <input type="email" name="email" id="email" required value="{{ old('email') }}">
-        </div>
-        <div>
-            <label for="password" style="display: block; margin-bottom: 5px; text-align: left;">Password:</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button type="submit">Registrarse</button>
-    </form>
-    <a href="/login">¿Ya tienes cuenta? Inicia sesión aquí</a>
-</body>
-
-</html>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-200">
+                Register
+            </button>
+            
+            <div class="text-center mt-4">
+                <a href="{{ route('login') }}" class="text-sm text-blue-600 hover:underline">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

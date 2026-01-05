@@ -7,7 +7,7 @@
         <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">About Us</h1>
         <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 prose max-w-none text-gray-700">
             <p class="mb-4">
-                Welcome to the Calculadora application. This project is designed to demonstrate the capabilities of Laravel
+                Welcome to the Calculator application. This project is designed to demonstrate the capabilities of Laravel
                 framework in building robust and scalable web applications.
             </p>
             <p class="mb-4">
@@ -20,7 +20,8 @@
             </p>
             <h3 class="text-xl font-semibold mt-6 mb-3">Contact</h3>
             <p>
-                For any inquiries, please contact us at <a href="mailto:info@calculadora.com" class="text-blue-600 hover:underline">info@calculadora.com</a>.
+                For any inquiries, please contact us at <a href="mailto:info@calculadora.com"
+                    class="text-blue-600 hover:underline">info@calculadora.com</a>.
             </p>
         </div>
     </div>

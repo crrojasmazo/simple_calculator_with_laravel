@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Calculadora')</title>
+    <title>@yield('title', 'Calculator')</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -30,8 +30,8 @@
             </div>
             <div class="flex items-center space-x-4">
                 @auth
-                    <span class="text-sm text-gray-600">Hola, {{ auth()->user()->name }}</span>
-                    <a href="{{ route('calculator.index') }}" class="text-sm text-gray-600 hover:text-gray-900 font-medium">Operaciones</a>
+                    <span class="text-sm text-gray-600">Hello, {{ auth()->user()->name }}</span>
+                    <a href="{{ route('calculator.index') }}" class="text-sm text-gray-600 hover:text-gray-900 font-medium">Calculator</a>
                     <form method="POST" action="{{ route('logout') }}" class="inline">
                         @csrf
                         <button type="submit" class="text-sm text-red-600 hover:text-red-800 font-medium">
@@ -57,8 +57,8 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="mb-2">Contacto: contacto@calculadora.com | +1 234 567 890</p>
-            <p class="text-sm text-gray-400">&copy; {{ date('Y') }} Calculadora App. Todos los derechos reservados.</p>
+            <p class="mb-2">Contact: contact@calculadora.com | +1 234 567 890</p>
+            <p class="text-sm text-gray-400">&copy; {{ date('Y') }} Calculator App. All rights reserved.</p>
         </div>
     </footer>
 
