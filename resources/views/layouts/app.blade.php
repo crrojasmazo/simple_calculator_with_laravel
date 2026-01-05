@@ -26,7 +26,7 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <a href="{{ url('/') }}" class="text-xl font-bold text-gray-800">Simple App</a>
+                <a href="{{ url('/') }}" class="text-xl font-bold text-gray-800">Simple Calculator App</a>
             </div>
             <div class="flex items-center space-x-4">
                 @auth
